@@ -16,4 +16,16 @@ public class MemberCollection {
         this.members.remove(member);
     }
 
+    public boolean authenticateMember(String username, String password){
+
+        for (Member m : members){
+            if (username.equals(m.getUsername()) && password.equals(m.getPassword())){
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
 }
