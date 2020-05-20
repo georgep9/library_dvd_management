@@ -9,7 +9,8 @@ public class Movie {
     private String genre;
     private String classification;
     private String releaseDate;
-
+    private int copiesAvailable;
+    private int copiesBorrowed;
 
     public Movie(String title,
                  String starring,
@@ -29,8 +30,14 @@ public class Movie {
 
     }
 
-
-
-
+    public String getTitle() { return this.title; }
+    public String getStarring() { return this.starring; }
+    public String getDirector() { return this.director; }
+    public String getDuration() { return this.duration; }
+    public String getGenre() { return this.genre; }
+    public String getClassification() { return this.classification; }
+    public String getReleaseDate() { return this.releaseDate; }
+    public int getCopiesAvailable() { return this.copiesAvailable; }
+    public int getCopiesBorrowed() { return this.copiesBorrowed; }
 
 }

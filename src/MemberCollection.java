@@ -1,34 +1,36 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MemberCollection {
 
-    private ArrayList<Member> members;
+    private static final int max_amount = 64;
+
+    private Member[] members;
+    private int membersAmount; 
+
+    private Movie[] borrowedMovies;
+    private int borrowedAmount;
 
     public MemberCollection(){
-        this.members = new ArrayList<Member>();
+        this.members = new Member[max_amount];
+        this.membersAmount = 0;
+        this.borrowedAmount = 0;
     }
 
-    public void addMember(Member newMember){
-        this.members.add(newMember);
-    }
-
-    public void removeMember(Member member){
-        this.members.remove(member);
-    }
-
-    public boolean authenticateMember(String username, String password){
-        for (Member m : members){
-            if (username.equals(m.getUsername()) && password.equals(m.getPassword())){
-                return true;
-            }
+    public boolean addMember(Member newMember){
+        if (membersAmount < max_amount){
+            members[membersAmount] = newMember;
+            membersAmount++;
+            return true;
         }
         return false;
     }
 
+
     public Member getMember(String username){
-        for (Member m : members){
-            if (username.equals(m.getUsername())){
-                return m;
+        for (int i = 0; i < membersAmount; i++){
+            if (username.equals(members[i].getUsername())){
+                return members[i];
             }
         }
         return null;

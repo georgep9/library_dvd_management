@@ -31,8 +31,6 @@ public class StaffMenu {
         Member newMember = new Member(username, password, residentialAddress, phoneNumber);
         memberCollection.addMember(newMember);
 
-        System.out.println("Member registered.");
-
     }
 
     public void FindMemberPhoneNumber(){
