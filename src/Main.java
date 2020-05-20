@@ -37,15 +37,23 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String username = scan.nextLine();
 
+        Member member = memberCollection.getMember(username);
+
+        if (member == null){
+            System.out.println("Member does not exist.");
+            return;
+        }
+
         System.out.println("Password:");
         scan = new Scanner(System.in);
         String password = scan.nextLine();
 
-        if (memberCollection.authenticateMember(username, password)){
+        if (password.equals(member.getPassword())){
+            System.out.println("Successfully logged in.");
             memberMenu.View();
         }
         else {
-            System.out.println("Incorrect username or password.");
+            System.out.println("Incorrect password.");
         }
 
     }
@@ -66,7 +74,6 @@ public class Main {
             case 0:
                 System.out.println("Goodbye!");
                 System.exit(0);
-                break;
             case 1:
                 StaffLogin();
                 break;
@@ -90,5 +97,6 @@ public class Main {
 
         System.out.println("Welcome to the Community Library");
         MainMenu();
+
     }
 }

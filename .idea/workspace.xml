@@ -4,7 +4,16 @@
     <list default="true" id="9509441a-6089-4203-abe2-690cab4e03c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB301/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB301/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB301/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB301/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB301/MemberCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB301/MemberCollection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB301/MemberMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB301/MemberMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB301/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB301/Movie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemberCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemberCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemberMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemberMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaffMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaffMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +77,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1151" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589946289576" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589952704035">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1589956404083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589952704035" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1589952704034">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589956404083" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1589956404083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589952704034" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1589952704034">
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589956404083" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1589956404083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589952704034" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1589952704035">
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589956404083" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1589956404083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589952704035" />
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589956404083" />
     <state x="1009" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1589946548928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

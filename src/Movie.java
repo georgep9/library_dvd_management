@@ -5,19 +5,19 @@ public class Movie {
     private String title;
     private String starring;
     private String director;
-    private int duration;
+    private String duration;
     private String genre;
     private String classification;
-    private Date releaseDate;
+    private String releaseDate;
 
 
     public Movie(String title,
                  String starring,
                  String director,
-                 int duration,
+                 String duration,
                  String genre,
                  String classification,
-                 Date releaseDate){
+                 String releaseDate){
 
         this.title = title;
         this.starring = starring;

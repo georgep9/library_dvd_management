@@ -17,15 +17,23 @@ public class MemberCollection {
     }
 
     public boolean authenticateMember(String username, String password){
-
         for (Member m : members){
             if (username.equals(m.getUsername()) && password.equals(m.getPassword())){
                 return true;
             }
         }
-
         return false;
-
     }
+
+    public Member getMember(String username){
+        for (Member m : members){
+            if (username.equals(m.getUsername())){
+                return m;
+            }
+        }
+        return null;
+    }
+
+
 
 }

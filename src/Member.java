@@ -8,11 +8,11 @@ public class Member {
     private String username;
     private String password;
     private String residentialAddress;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private List<Movie> borrowedMovies;
 
 
-    public Member(String username, String password, String residentialAddress, Integer phoneNumber){
+    public Member(String username, String password, String residentialAddress, String phoneNumber){
         this.username = username;
         this.password = password;
         this.residentialAddress = residentialAddress;
@@ -23,7 +23,7 @@ public class Member {
     public String getUsername() { return this.username; }
     public String getPassword() { return this.password; }
     public String getResidentialAddress() { return this.residentialAddress; }
-    public int getPhoneNumber() { return this.phoneNumber; }
+    public String getPhoneNumber() { return this.phoneNumber; }
     public List<Movie> getBorrowedMovies(){ return this.borrowedMovies; }
 
     public Boolean addMovieBorrow(Movie movie){
