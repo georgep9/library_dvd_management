@@ -18,7 +18,8 @@ public class Movie {
                  String duration,
                  String genre,
                  String classification,
-                 String releaseDate){
+                 String releaseDate,
+                 int copiesAvailable){
 
         this.title = title;
         this.starring = starring;
@@ -27,6 +28,8 @@ public class Movie {
         this.genre = genre;
         this.classification = classification;
         this.releaseDate = releaseDate;
+        this.copiesAvailable = copiesAvailable;
+        this.copiesBorrowed = 0;
 
     }
 

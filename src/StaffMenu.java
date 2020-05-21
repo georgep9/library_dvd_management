@@ -2,9 +2,62 @@ import java.util.Scanner;
 
 public class StaffMenu {
 
+    MovieCollection movieCollection;
     MemberCollection memberCollection;
 
+
+    public void AddNewMovie(){
+
+        System.out.println("Movie title:");
+        Scanner scan = new Scanner(System.in);
+        String title = scan.nextLine();
+
+        System.out.println("Starring:");
+        scan = new Scanner(System.in);
+        String starring = scan.nextLine();
+
+        System.out.println("Director:");
+        scan = new Scanner(System.in);
+        String director = scan.nextLine();
+
+        System.out.println("Duration:");
+        scan = new Scanner(System.in);
+        String duration = scan.nextLine();
+
+        System.out.println("Genre:");
+        scan = new Scanner(System.in);
+        String genre = scan.nextLine();
+
+        System.out.println("Classification:");
+        scan = new Scanner(System.in);
+        String classification = scan.nextLine();
+
+        System.out.println("Release Date:");
+        scan = new Scanner(System.in);
+        String releaseDate = scan.nextLine();
+
+        System.out.println("Copies available:");
+        scan = new Scanner(System.in);
+        int copiesAvailable = scan.nextInt();
+
+        Movie newMovie = new Movie(title,starring,director,duration,genre,classification,releaseDate,copiesAvailable);
+
+        movieCollection.addMovie(newMovie);
+
+        System.out.println("Movie added to library.");
+
+    }
+
+    public void RemoveMovie(){
+        System.out.println("Title of movie to delete:");
+        Scanner scan = new Scanner(System.in);
+        String title = scan.nextLine();
+
+        movieCollection.removeMovie(title);
+    }
+
     public void RegisterMember(){
+
 
         System.out.println("Surname:");
         Scanner scan = new Scanner(System.in);
@@ -61,15 +114,21 @@ public class StaffMenu {
                 "0. Return to main menu\n" +
                 "=================================\n" +
                 "Please make a selection(1-4 or 0 to return to main menu):");
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
 
-        switch (i){
+        int option = -1;
+        try {
+            Scanner scan = new Scanner(System.in);
+            option = scan.nextInt();
+        } catch (Exception e){}
+
+        switch (option){
             case 0:
                 return;
             case 1:
+                AddNewMovie();
                 break;
             case 2:
+                RemoveMovie();
                 break;
             case 3:
                 RegisterMember();
@@ -78,14 +137,15 @@ public class StaffMenu {
                 FindMemberPhoneNumber();
                 break;
             default:
-                System.out.println("Invalid option.");
+                System.out.println("Invalid option, try again.");
                 break;
         }
         View();
 
     }
 
-    public StaffMenu(MemberCollection memberCollection){
+    public StaffMenu(MovieCollection movieCollection, MemberCollection memberCollection){
+        this.movieCollection = movieCollection;
         this.memberCollection = memberCollection;
     }
 

@@ -67,8 +67,12 @@ public class Main {
                 "=================================\n" +
                 "Please make a selection(1-2 or 0 exit):");
 
-        Scanner scan = new Scanner(System.in);
-        int option = scan.nextInt();
+        int option = -1;
+        try {
+            Scanner scan = new Scanner(System.in);
+            option = scan.nextInt();
+        } catch (Exception e){}
+
 
         switch (option){
             case 0:
@@ -84,6 +88,8 @@ public class Main {
                 System.out.println("Invalid option, try again.");
                 break;
         }
+
+
         MainMenu();
     }
 
@@ -92,7 +98,7 @@ public class Main {
         memberCollection = new MemberCollection();
         movieCollection = new MovieCollection();
 
-        staffMenu = new StaffMenu(memberCollection);
+        staffMenu = new StaffMenu(movieCollection, memberCollection);
         memberMenu = new MemberMenu(movieCollection);
 
         System.out.println("Welcome to the Community Library");

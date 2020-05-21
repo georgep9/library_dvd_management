@@ -4,6 +4,10 @@ public class MemberMenu {
 
     MovieCollection movieCollection;
 
+    public void DisplayMovies(){
+        movieCollection.displayMovies();
+    }
+
     public void View() {
 
         System.out.println(
@@ -16,9 +20,32 @@ public class MemberMenu {
                 "0. Return to main menu\n" +
                 "=================================\n" +
                 "Please make a selection(1-5 or 0 to return to main menu):");
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        System.out.println(i);
+
+        int option = -1;
+        try {
+            Scanner scan = new Scanner(System.in);
+            option = scan.nextInt();
+        } catch (Exception e){}
+
+        switch (option){
+            case 0:
+                return;
+            case 1:
+                DisplayMovies();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            default:
+                System.out.println("Invalid option, try again.");
+                break;
+        }
+        View();
 
     }
 
