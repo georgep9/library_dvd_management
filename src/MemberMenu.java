@@ -2,10 +2,66 @@ import java.util.Scanner;
 
 public class MemberMenu {
 
+    Member member; // current member logged on
     MovieCollection movieCollection;
 
     public void DisplayMovies(){
-        movieCollection.displayMovies();
+        this.movieCollection.displayMovies();
+    }
+
+    public void BorrowMovie(){
+
+        System.out.println("Title of movie to borrow:");
+        Scanner scan = new Scanner(System.in);
+        String title = scan.nextLine();
+
+        Movie movie = this.movieCollection.getMovie(title);
+
+        if (movie == null){
+            System.out.println("Movie with title '" + title + "' does not exist.");
+        }
+        else {
+            this.member.borrowMovie(movie);
+            if (movie.getCopiesAvailable() > 0){
+                movie.decCopiesAvailable();
+                movie.incBorrowCount();
+            }
+        }
+
+    }
+
+    public void ReturnMovie() {
+        System.out.println("Title of movie to return:");
+        Scanner scan = new Scanner(System.in);
+        String title = scan.nextLine();
+
+
+
+        boolean returnStatus = this.member.returnMovie(title);
+
+        if (returnStatus){
+            System.out.println("Movie has been returned.");
+
+            Movie movie = this.movieCollection.getMovie(title);
+            if (movie != null){
+                movie.incCopiesAvailable();
+            }
+
+        }
+        else {
+            System.out.println("This movie has not been borrowed.");
+        }
+    }
+
+
+
+
+    public void ListBorrowedMovies(){
+        Movie[] movies = this.member.getBorrowedMovies();
+        for (int i = 0; i < this.member.getAmountBorrowed(); i++){
+
+            movies[i].printMovieDesc();
+        }
     }
 
     public void View() {
@@ -34,10 +90,13 @@ public class MemberMenu {
                 DisplayMovies();
                 break;
             case 2:
+                BorrowMovie();
                 break;
             case 3:
+                ReturnMovie();
                 break;
             case 4:
+                ListBorrowedMovies();
                 break;
             case 5:
                 break;
@@ -45,11 +104,13 @@ public class MemberMenu {
                 System.out.println("Invalid option, try again.");
                 break;
         }
+
         View();
 
     }
 
-    public MemberMenu(MovieCollection movieCollection) {
+    public MemberMenu(Member member, MovieCollection movieCollection) {
+        this.member = member;
         this.movieCollection = movieCollection;
     }
 

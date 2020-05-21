@@ -6,7 +6,6 @@ public class Main {
     private static MovieCollection movieCollection;
 
     private static StaffMenu staffMenu;
-    private static MemberMenu memberMenu;
 
     private static final String staffUsername = "staff";
     private static final String staffPassword = "today123";
@@ -50,6 +49,7 @@ public class Main {
 
         if (password.equals(member.getPassword())){
             System.out.println("Successfully logged in.");
+            MemberMenu memberMenu = new MemberMenu(member, movieCollection);
             memberMenu.View();
         }
         else {
@@ -99,7 +99,6 @@ public class Main {
         movieCollection = new MovieCollection();
 
         staffMenu = new StaffMenu(movieCollection, memberCollection);
-        memberMenu = new MemberMenu(movieCollection);
 
         System.out.println("Welcome to the Community Library");
         MainMenu();

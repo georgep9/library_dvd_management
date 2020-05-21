@@ -1,16 +1,20 @@
 public class MovieCollection {
 
-    private MovieBST moveCollection;
+    private MovieBST movieCollection;
 
     public MovieCollection(){
-        this.moveCollection = new MovieBST();
+        this.movieCollection = new MovieBST();
     }
 
-    public void displayMovies() { moveCollection.inorderPrintMovies(); }
+    public Movie getMovie(String title) { return this.movieCollection.getMovie(title); }
 
-    public void addMovie(Movie movie) { moveCollection.addMovie(movie); }
+    public void displayMovies() { this.movieCollection.inorderPrintMovies(); }
 
-    public void removeMovie(String title) { moveCollection.removeMovie(title); }
+    public void addMovie(Movie movie) { this.movieCollection.addMovie(movie); }
+
+    public void removeMovie(String title) { this.movieCollection.removeMovie(title); }
+
+
 
 
 }

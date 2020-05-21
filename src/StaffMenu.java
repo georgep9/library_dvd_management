@@ -42,7 +42,7 @@ public class StaffMenu {
 
         Movie newMovie = new Movie(title,starring,director,duration,genre,classification,releaseDate,copiesAvailable);
 
-        movieCollection.addMovie(newMovie);
+        this.movieCollection.addMovie(newMovie);
 
         System.out.println("Movie added to library.");
 
@@ -53,7 +53,8 @@ public class StaffMenu {
         Scanner scan = new Scanner(System.in);
         String title = scan.nextLine();
 
-        movieCollection.removeMovie(title);
+        this.movieCollection.removeMovie(title);
+
     }
 
     public void RegisterMember(){

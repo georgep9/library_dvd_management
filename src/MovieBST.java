@@ -102,18 +102,36 @@ public class MovieBST {
 
             inorderPrintMoviesRec(root.left);
 
-            System.out.println("Title: " + root.key + " | " +
-                    "Starring: " + root.movie.getStarring() + " | " +
-                    "Director: " + root.movie.getDirector() + " | " +
-                    "Duration: " + root.movie.getDuration() + " | " +
-                    "Genre: " + root.movie.getGenre() + " | " +
-                    "Classification: " + root.movie.getClassification() + " | " +
-                    "Release Date: " + root.movie.getReleaseDate() + " | " +
-                    "Copies Available: " + root.movie.getCopiesAvailable() + "\n");
+            root.movie.printMovieDesc();
 
             inorderPrintMoviesRec(root.right);
         }
     }
+
+    Movie getMovie(String title){
+        return inorderSearchMovieRec(this.root, title);
+    }
+
+    Movie inorderSearchMovieRec(Node root, String title){
+
+        if (root == null){
+            return null;
+        }
+
+        if (title.compareTo(root.key) == 0){
+            return root.movie;
+        }
+        else if (title.compareTo(root.key) < 0){
+            return inorderSearchMovieRec(root.left, title);
+        }
+        else if (title.compareTo(root.key) > 0){
+            return inorderSearchMovieRec(root.right, title);
+        }
+
+        return null;
+
+    }
+
 
 
 

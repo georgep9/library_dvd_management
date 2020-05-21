@@ -10,7 +10,7 @@ public class Movie {
     private String classification;
     private String releaseDate;
     private int copiesAvailable;
-    private int copiesBorrowed;
+    private int borrowedCount;
 
     public Movie(String title,
                  String starring,
@@ -29,7 +29,7 @@ public class Movie {
         this.classification = classification;
         this.releaseDate = releaseDate;
         this.copiesAvailable = copiesAvailable;
-        this.copiesBorrowed = 0;
+        this.borrowedCount = 0;
 
     }
 
@@ -41,6 +41,21 @@ public class Movie {
     public String getClassification() { return this.classification; }
     public String getReleaseDate() { return this.releaseDate; }
     public int getCopiesAvailable() { return this.copiesAvailable; }
-    public int getCopiesBorrowed() { return this.copiesBorrowed; }
+    public int getCopiesBorrowed() { return this.borrowedCount; }
+
+    public void printMovieDesc() {
+        System.out.println("Title: " + this.title + " | " +
+            "Starring: " + this.starring + " | " +
+            "Director: " + this.director + " | " +
+            "Duration: " + this.duration + " | " +
+            "Genre: " + this.genre + " | " +
+            "Classification: " + this.classification + " | " +
+            "Release Date: " + this.releaseDate + " | " +
+            "Copies Available: " + this.copiesAvailable + "\n");
+    }
+
+    public void incBorrowCount() { this.borrowedCount++; }
+    public void incCopiesAvailable() { this.copiesAvailable++; }
+    public void decCopiesAvailable() { this.copiesAvailable--; }
 
 }

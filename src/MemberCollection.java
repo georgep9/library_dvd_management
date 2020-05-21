@@ -26,7 +26,6 @@ public class MemberCollection {
         return false;
     }
 
-
     public Member getMember(String username){
         for (int i = 0; i < membersAmount; i++){
             if (username.equals(members[i].getUsername())){
