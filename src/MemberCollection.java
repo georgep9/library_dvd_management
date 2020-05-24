@@ -18,6 +18,7 @@ public class MemberCollection {
     }
 
     public boolean addMember(Member newMember){
+
         if (membersAmount < max_amount){
             members[membersAmount] = newMember;
             membersAmount++;

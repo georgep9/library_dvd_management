@@ -6,14 +6,14 @@ public class Member {
     static final int MAX_BORROW_AMOUNT = 10;
 
     private String username;
-    private String password;
+    private int password;
     private String residentialAddress;
     private String phoneNumber;
     private Movie[] borrowedMovies; // titles
     private int amountBorrowed;
 
 
-    public Member(String username, String password, String residentialAddress, String phoneNumber){
+    public Member(String username, int password, String residentialAddress, String phoneNumber){
         this.username = username;
         this.password = password;
         this.residentialAddress = residentialAddress;
@@ -23,7 +23,7 @@ public class Member {
     }
 
     public String getUsername() { return this.username; }
-    public String getPassword() { return this.password; }
+    public int getPassword() { return this.password; }
     public String getResidentialAddress() { return this.residentialAddress; }
     public String getPhoneNumber() { return this.phoneNumber; }
     public Movie[] getBorrowedMovies(){ return this.borrowedMovies; }

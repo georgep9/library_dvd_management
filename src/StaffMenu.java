@@ -78,9 +78,19 @@ public class StaffMenu {
         scan = new Scanner(System.in);
         String phoneNumber = scan.nextLine();
 
-        System.out.println("New password for member:");
+        System.out.println("New password for member (4 digit integer):");
         scan = new Scanner(System.in);
-        String password = scan.nextLine();
+        // ensure user provides a 4 digit integer:
+        int password = 0;
+        while (scan.hasNext()){
+            if (scan.hasNextInt()){
+                password =  scan.nextInt();
+                if (String.valueOf(password).length() == 4){ break; }
+                else { scan = new Scanner(System.in); }
+            }
+            else { scan.next(); }
+            System.out.println("Password needs to be a 4 digit integer.");
+        }
 
         Member newMember = new Member(username, password, residentialAddress, phoneNumber);
         memberCollection.addMember(newMember);

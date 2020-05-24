@@ -45,9 +45,13 @@ public class Main {
 
         System.out.println("Password:");
         scan = new Scanner(System.in);
-        String password = scan.nextLine();
+        while (!scan.hasNextInt()) {
+            System.out.println("Password needs to be an integer.");
+            scan.next();
+        }
+        int password = scan.nextInt();
 
-        if (password.equals(member.getPassword())){
+        if (password == member.getPassword()){
             System.out.println("Successfully logged in.");
             MemberMenu memberMenu = new MemberMenu(member, movieCollection);
             memberMenu.View();
