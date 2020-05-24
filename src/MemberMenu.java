@@ -3,18 +3,25 @@ import java.util.Scanner;
 public class MemberMenu {
 
     Member member; // current member logged on
-    MovieCollection movieCollection;
+    MovieCollection movieCollection; // Movie Collection
 
+    /*
+    Print all movie descriptions
+     */
     public void DisplayMovies(){
         this.movieCollection.displayMovies();
     }
 
+    /*
+    Borrow movie for the member if provided Movie exists
+     */
     public void BorrowMovie(){
 
         System.out.println("Title of movie to borrow:");
         Scanner scan = new Scanner(System.in);
         String title = scan.nextLine();
 
+        // null if movie does not exist in collection
         Movie movie = this.movieCollection.getMovie(title);
 
         if (movie == null){
@@ -26,13 +33,16 @@ public class MemberMenu {
 
     }
 
+    /*
+    Return movie for member
+     */
     public void ReturnMovie() {
+
         System.out.println("Title of movie to return:");
         Scanner scan = new Scanner(System.in);
         String title = scan.nextLine();
 
-
-
+        // null if movie is not returned (movie not borrowed)
         boolean returnStatus = this.member.returnMovie(title);
 
         if (returnStatus){
@@ -49,21 +59,27 @@ public class MemberMenu {
         }
     }
 
-
-
-
+    /*
+    Display movie descriptions from member's array of borrowed movies
+     */
     public void ListBorrowedMovies(){
         Movie[] movies = this.member.getBorrowedMovies();
         for (int i = 0; i < this.member.getAmountBorrowed(); i++){
-
             movies[i].printMovieDesc();
         }
     }
 
+    /*
+    Display top 10 borrowed movies
+     */
     public void DisplayTop10Borrowed(){
         this.movieCollection.displayTop10Borrowed();
     }
 
+    /*
+    Member Menu display, switch case to run the functions above.
+    Recursively displays menu until input 0 is provided.
+     */
     public void View() {
 
         System.out.println(
@@ -85,7 +101,7 @@ public class MemberMenu {
 
         switch (option){
             case 0:
-                return;
+                return; // return out of menu
             case 1:
                 DisplayMovies();
                 break;

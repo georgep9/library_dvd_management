@@ -1,7 +1,7 @@
-import java.util.Date;
 
 public class Movie {
 
+    // Movie object attributes
     private String title;
     private String starring;
     private String director;
@@ -12,6 +12,9 @@ public class Movie {
     private int copiesAvailable;
     private int borrowedCount;
 
+    /*
+    Construct Movie object
+     */
     public Movie(String title,
                  String starring,
                  String director,
@@ -33,6 +36,9 @@ public class Movie {
 
     }
 
+    /*
+    Getters for Movie attributes
+     */
     public String getTitle() { return this.title; }
     public String getStarring() { return this.starring; }
     public String getDirector() { return this.director; }
@@ -43,6 +49,9 @@ public class Movie {
     public int getCopiesAvailable() { return this.copiesAvailable; }
     public int getCopiesBorrowed() { return this.borrowedCount; }
 
+    /*
+    Print the Movie object's attributes
+     */
     public void printMovieDesc() {
         System.out.println("Title: " + this.title + " | " +
             "Starring: " + this.starring + " | " +
@@ -54,6 +63,9 @@ public class Movie {
             "Copies Available: " + this.copiesAvailable + "\n");
     }
 
+    /*
+    Decrement and increment counters
+     */
     public void incBorrowCount() { this.borrowedCount++; }
     public void incCopiesAvailable() { this.copiesAvailable++; }
     public void decCopiesAvailable() { this.copiesAvailable--; }

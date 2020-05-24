@@ -6,6 +6,10 @@ public class StaffMenu {
     MemberCollection memberCollection;
 
 
+    /*
+    Read user inputs to strings, create movie object,
+    then add movie to Movie Collection BST
+     */
     public void AddNewMovie(){
 
         System.out.println("Movie title:");
@@ -48,6 +52,9 @@ public class StaffMenu {
 
     }
 
+    /*
+    Remove movie from Movie Collection BST
+     */
     public void RemoveMovie(){
         System.out.println("Title of movie to delete:");
         Scanner scan = new Scanner(System.in);
@@ -57,6 +64,10 @@ public class StaffMenu {
 
     }
 
+    /*
+    Read user inputs to strings, ensures password is 4 digit integer,
+    create new Member object, then add member to Member Collection array
+     */
     public void RegisterMember(){
 
 
@@ -80,6 +91,7 @@ public class StaffMenu {
 
         System.out.println("New password for member (4 digit integer):");
         scan = new Scanner(System.in);
+
         // ensure user provides a 4 digit integer:
         int password = 0;
         while (scan.hasNext()){
@@ -97,13 +109,16 @@ public class StaffMenu {
 
     }
 
+    /*
+    Provided member username string from user input, print members phone no.
+     */
     public void FindMemberPhoneNumber(){
 
         System.out.println("Enter username of Member:");
         Scanner scan = new Scanner(System.in);
         String username = scan.nextLine();
 
-        Member member = memberCollection.getMember(username);
+        Member member = this.memberCollection.getMember(username);
 
         if (member != null){
             System.out.println("Member's phone number: " + member.getPhoneNumber());
@@ -114,6 +129,10 @@ public class StaffMenu {
 
     }
 
+    /*
+    Staff Menu display, switch case to run the functions above.
+    Recursively displays menu until input 0 is provided.
+     */
     public void View() {
 
         System.out.println(
@@ -134,7 +153,7 @@ public class StaffMenu {
 
         switch (option){
             case 0:
-                return;
+                return; // return out of menu
             case 1:
                 AddNewMovie();
                 break;
@@ -154,6 +173,7 @@ public class StaffMenu {
         View();
 
     }
+
 
     public StaffMenu(MovieCollection movieCollection, MemberCollection memberCollection){
         this.movieCollection = movieCollection;
