@@ -22,10 +22,6 @@ public class MemberMenu {
         }
         else {
             this.member.borrowMovie(movie);
-            if (movie.getCopiesAvailable() > 0){
-                movie.decCopiesAvailable();
-                movie.incBorrowCount();
-            }
         }
 
     }
@@ -64,6 +60,10 @@ public class MemberMenu {
         }
     }
 
+    public void DisplayTop10Borrowed(){
+        this.movieCollection.displayTop10Borrowed();
+    }
+
     public void View() {
 
         System.out.println(
@@ -99,6 +99,7 @@ public class MemberMenu {
                 ListBorrowedMovies();
                 break;
             case 5:
+                DisplayTop10Borrowed();
                 break;
             default:
                 System.out.println("Invalid option, try again.");

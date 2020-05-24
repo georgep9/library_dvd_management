@@ -51,6 +51,9 @@ public class Member {
 
         this.borrowedMovies[this.amountBorrowed] = movie;
         this.amountBorrowed++;
+        movie.incBorrowCount();
+        movie.decCopiesAvailable();
+
         System.out.println("Successfully borrowed movie.");
 
     }

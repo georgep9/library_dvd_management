@@ -1,8 +1,13 @@
-
+import java.lang.reflect.Array;
 
 public class MovieBST {
 
-    class Node {
+    private Movie arrayMovies[]; // for flattening BST
+    private int arrayMoviesIndex;
+
+    private int moviesCount; // count of BST nodes
+
+    private class Node {
         String key;
         Movie movie;
         Node left, right;
@@ -15,20 +20,22 @@ public class MovieBST {
 
     private Node root;
 
-    MovieBST() {
+    public MovieBST() {
         this.root = null;
+        this.moviesCount = 0;
     }
 
-    void addMovie(Movie movie) {
+    public void addMovie(Movie movie) {
         this.root = insertMoveRec(this.root, movie);
     }
 
     // Move recursively through nodes to insert movie
-    Node insertMoveRec(Node node, Movie movie){
+    private Node insertMoveRec(Node node, Movie movie){
 
         // if node is empty, add new node
         if (node == null){
             node = new Node(movie);
+            this.moviesCount++;
             return node;
         }
 
@@ -45,13 +52,17 @@ public class MovieBST {
 
     }
 
-    void removeMovie(String title){ this.root = deleteMovieRec(this.root, title); }
+    public void removeMovie(String title){
+        this.moviesCount--; // dec.
+        this.root = deleteMovieRec(this.root, title);
+    }
 
     /* A recursive function to insert a new key in BST */
-    Node deleteMovieRec(Node root, String key)
+    private Node deleteMovieRec(Node root, String key)
     {
         /* Base Case: If the tree is empty */
         if (root == null)  {
+            this.moviesCount++; // correct count
             return root;
         }
 
@@ -84,7 +95,7 @@ public class MovieBST {
         return root;
     }
 
-    Node minNode(Node root){
+    private Node minNode(Node root){
         if (root.left != null){
             minNode(root.left);
         }
@@ -93,11 +104,11 @@ public class MovieBST {
 
 
 
-    void inorderPrintMovies(){
+    public void inorderPrintMovies(){
         inorderPrintMoviesRec(this.root);
     }
 
-    void inorderPrintMoviesRec(Node root){
+    private void inorderPrintMoviesRec(Node root){
         if (root != null){
 
             inorderPrintMoviesRec(root.left);
@@ -108,11 +119,11 @@ public class MovieBST {
         }
     }
 
-    Movie getMovie(String title){
+    public Movie getMovie(String title){
         return inorderSearchMovieRec(this.root, title);
     }
 
-    Movie inorderSearchMovieRec(Node root, String title){
+    private Movie inorderSearchMovieRec(Node root, String title){
 
         if (root == null){
             return null;
@@ -130,6 +141,34 @@ public class MovieBST {
 
         return null;
 
+    }
+
+    public Movie[] getArrayMovies(){
+        this.arrayMovies = new Movie[this.moviesCount];
+        this.arrayMoviesIndex = 0;
+        this.flattenMovies(this.root);
+        return this.arrayMovies;
+    }
+
+    public void flattenMovies(Node root){
+        if (root != null){
+
+            flattenMovies(root.left);
+
+            // add to array and increment index
+            this.arrayMovies[arrayMoviesIndex] = root.movie;
+            arrayMoviesIndex++;
+
+            flattenMovies(root.right);
+        }
+    }
+
+
+
+
+
+    public int getMoviesCount(){
+        return this.moviesCount;
     }
 
 
