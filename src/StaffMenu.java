@@ -28,11 +28,24 @@ public class StaffMenu {
         scan = new Scanner(System.in);
         String duration = scan.nextLine();
 
-        System.out.println("Genre:");
+        System.out.println("Select from the following genres:\n" +
+                "1. Drama\n" +
+                "2. Adventure\n" +
+                "3. Family\n" +
+                "4. Action\n" +
+                "5. Sci-Fi\n" +
+                "6. Comedy\n" +
+                "7. Animated\n" +
+                "8. Thriller\n" +
+                "9. Other");
         scan = new Scanner(System.in);
         String genre = scan.nextLine();
 
-        System.out.println("Classification:");
+        System.out.println("Select from the following classifications:\n" +
+                "1. General (G)\n" +
+                "2. Parental Guidance (PG)\n" +
+                "3. Mature (M15+)\n" +
+                "4. Mature Accompanied (MA15+)");
         scan = new Scanner(System.in);
         String classification = scan.nextLine();
 

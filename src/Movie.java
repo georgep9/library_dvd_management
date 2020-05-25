@@ -53,12 +53,49 @@ public class Movie {
     Print the Movie object's attributes
      */
     public void printMovieDesc() {
+
+        String genre = "";
+        switch (this.genre){
+            case "1": genre = "Drama";
+                break;
+            case "2": genre = "Adventure";
+                break;
+            case "3": genre = "Family";
+                break;
+            case "4": genre = "Action";
+                break;
+            case "5": genre = "Sci-Fi";
+                break;
+            case "6": genre = "Comedy";
+                break;
+            case "7": genre = "Animated";
+                break;
+            case "8": genre = "Thriller";
+                break;
+            default: genre = "Other";
+                break;
+        }
+
+        String classification = "";
+        switch (this.classification){
+            case "1": classification = "General (G)";
+                break;
+            case "2": classification = "Parental Guidance (PG)";
+                break;
+            case "3": classification = "Mature (M15+)";
+                break;
+            case "4": classification = "Mature Accompanied (MA15+)";
+                break;
+            default: classification = "Other";
+                break;
+        }
+
         System.out.println("Title: " + this.title + " | " +
             "Starring: " + this.starring + " | " +
             "Director: " + this.director + " | " +
             "Duration: " + this.duration + " | " +
-            "Genre: " + this.genre + " | " +
-            "Classification: " + this.classification + " | " +
+            "Genre: " + genre + " | " +
+            "Classification: " + classification + " | " +
             "Release Date: " + this.releaseDate + " | " +
             "Copies Available: " + this.copiesAvailable + "\n");
     }
