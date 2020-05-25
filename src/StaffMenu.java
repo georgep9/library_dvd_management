@@ -42,6 +42,7 @@ public class StaffMenu {
 
         System.out.println("Copies available:");
         scan = new Scanner(System.in);
+        while(!scan.hasNextInt()) scan.next();
         int copiesAvailable = scan.nextInt();
 
         Movie newMovie = new Movie(title,starring,director,duration,genre,classification,releaseDate,copiesAvailable);
@@ -106,6 +107,8 @@ public class StaffMenu {
 
         Member newMember = new Member(username, password, residentialAddress, phoneNumber);
         memberCollection.addMember(newMember);
+
+        System.out.println("New member registered!");
 
     }
 

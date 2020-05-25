@@ -9,12 +9,24 @@ public class MovieCollection {
         this.movieCollection = new MovieBST();
     }
 
-    /*
-    Movie Collection functions
-     */
+    /* Return movie when given title string */
     public Movie getMovie(String title) { return this.movieCollection.getMovie(title); }
-    public void displayMovies() { this.movieCollection.inorderPrintMovies(); }
+
+    /*
+    Print movie descriptions if movies exists.
+     */
+    public void displayMovies() {
+        if (this.movieCollection.getMoviesCount() <= 0){
+            System.out.println("No movies in the library.");
+            return;
+        }
+        this.movieCollection.inorderPrintMovies();
+    }
+
+    /* Add movie to collection */
     public void addMovie(Movie movie) { this.movieCollection.addMovie(movie); }
+
+    /* Remove movie from collection */
     public void removeMovie(String title) { this.movieCollection.removeMovie(title); }
 
     /*
